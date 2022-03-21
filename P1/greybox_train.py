@@ -13,6 +13,7 @@ from mmaction.apis import train_model
 import mmcv
 from mmcv import Config
 
+# TODO: Make changes according to greybox model
 
 val = pd.read_csv("P1/data/validation400.csv")
 train = pd.read_csv("P1/data/combined400.csv")
