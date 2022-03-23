@@ -13,8 +13,7 @@ from mmaction.apis import train_model
 import mmcv
 from mmcv import Config
 
-# TODO: Make changes according to greybox model
-
+# TODO: Make changes according to greybox and add the config of greybox
 val = pd.read_csv("P1/data/validation400.csv")
 train = pd.read_csv("P1/data/combined400.csv")
 
@@ -59,6 +58,10 @@ for _, row in val.iterrows():
 file.writelines(texts)
 file.close()
 
+# Loading configuration for training the model
+from mmcv import Config
+cfg = Config.fromfile('config/greybox_config.py')
+print(f'Config:\n{cfg.pretty_text}')
 # Using MMAction utilities for building the dataset and training the model.
 
 # Build the dataset

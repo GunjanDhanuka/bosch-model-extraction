@@ -58,6 +58,10 @@ for _, row in val.iterrows():
 file.writelines(texts)
 file.close()
 
+# Loading configuration for training the model
+from mmcv import Config
+cfg = Config.fromfile('config/blackbox_config.py')
+print(f'Config:\n{cfg.pretty_text}')
 # Using MMAction utilities for building the dataset and training the model.
 
 # Build the dataset
